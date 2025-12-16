@@ -1,8 +1,12 @@
-#include <bits/stdc++.h>
-using namespace std;
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int curr= 0, maxtilNow= INT_MIN; 
+        for(int num: nums){
+            curr= max(num, curr+num); 
+            maxtilNow= max(maxtilNow, curr); 
+        }
 
-int main() {
-    cout << "Hello, World!" << endl;
-    cout << "CVR" << endl;
-    return 0;
-}
+        return maxtilNow;
+    }
+};
